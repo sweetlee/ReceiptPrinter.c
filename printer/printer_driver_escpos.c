@@ -25,8 +25,9 @@ static unsigned char ALIGNRIGHT[] = { 0x1b, 0x61, 2 };
 static unsigned char BOLDON[] = { 0x1b, 0x45, 1 };
 static unsigned char BOLDOFF[] = { 0x1b, 0x45, 0 };
 static unsigned char INIT[] = { 0x1b, 0x40 };
+static unsigned char SWITCH_COMMAND[] = { 0x1b, 0x69, 0x61, 0x00 };
 static unsigned char STANDARD_MODE[] = { 0x1b, 0x53 };
-
+static unsigned char FLUSH_COMMAND[] = {0xFF, 0x0C};
 
 static int
 drv_init(printer_driver_data *data) {
@@ -42,6 +43,7 @@ drv_will_output(bytebuf *ob, bytebuf *content, PrinterState state, printer_drive
     _printer_log("drv_will_output, state: %i", state);
     
     if (state == PrinterStatePreparing) {
+        bytebuf_append_bytes(ob, SWITCH_COMMAND, 4);
         bytebuf_append_bytes(ob, INIT, 2);
         bytebuf_append_bytes(ob, STANDARD_MODE, 2);
     }
@@ -60,6 +62,9 @@ drv_will_output(bytebuf *ob, bytebuf *content, PrinterState state, printer_drive
 static int
 drv_render_end(bytebuf *ob, printer_driver_data *data) {
     _printer_log("rendering end");
+    
+    // Flush
+    bytebuf_append_bytes(ob, FLUSH_COMMAND, 2);
     
     // Paper feed
     bytebuf_append_bytes(ob, PAPERFEED, 3);
