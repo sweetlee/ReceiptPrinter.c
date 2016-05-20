@@ -9,7 +9,7 @@
 #define __printer
 
 #include <stdint.h>
-#include "bytebuf/bytebuf.h"
+#include "bytebuf.h"
 
 
 //#define _printer_log(fmt, ...) printf("Printer " _printer_driver ": " fmt "\n", ##__VA_ARGS__)
