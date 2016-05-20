@@ -20,8 +20,14 @@ Pod::Spec.new do |s|
   s.public_header_files = 'ReceiptPrinter/*.h'
   s.frameworks = 'ExternalAccessory'
 
-  #s.default_subspecs = 'bytebuf', 'printer'
+  s.default_subspecs = 'bytebuf', 'printer'
 
-
+  s.subspec "printer" do |sp|
+     sp.source_files = 'printer/*.{h,c}'
+  end
+  
+  s.subspec "bytebuf" do |sp|
+     sp.source_files = 'bytebuf/*.{h,c}'
+  end
 
 end
