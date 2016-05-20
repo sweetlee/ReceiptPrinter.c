@@ -17,17 +17,17 @@ Pod::Spec.new do |s|
   s.source_files = 'ReceiptPrinter/*.{h,m}', 'printer/*.{h,c}', 'bytebuf/*.{h,c}'
   s.header_mappings_dir = '*'
 
-  # s.public_header_files = 'ReceiptPrinter/*.h'
+  s.public_header_files = 'ReceiptPrinter/*.h'
   s.frameworks = 'ExternalAccessory'
 
-  # s.default_subspecs = 'bytebuf', 'printer'
+  s.default_subspecs = 'bytebuf', 'printer'
 
-  # subspec "printer" do |sp|
-  #   sp.source_files = 'printer/*.{h,c}'
-  # end
-  #
-  # subspec "bytebuf" do |sp|
-  #   sp.source_files = 'bytebuf/*.{h,c}'
-  # end
+  subspec "printer" do |sp|
+     sp.source_files = 'printer/*.{h,c}'
+  end
+  
+  subspec "bytebuf" do |sp|
+     sp.source_files = 'bytebuf/*.{h,c}'
+  end
 
 end
