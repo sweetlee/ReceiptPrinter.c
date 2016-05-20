@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/xslim/ReceiptPrinter"
   s.license          = 'MIT'
   s.author           = { "Taras Kalapun" => "t.kalapun@gmail.com" }
-  #s.source           = { :git => "https://github.com/xslim/zint.c.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/xslim/zint.c.git", :tag => s.version.to_s }
 
 
   s.platform     = :ios, '6.0'
