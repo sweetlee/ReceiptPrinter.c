@@ -4,8 +4,7 @@ Pod::Spec.new do |s|
   s.name             = "ReceiptPrinter"
   s.version          = "0.1.1"
   s.summary          = "ReceiptPrinter"
-  s.description      = <<-DESC
-                       DESC
+  s.description      = "Receipt Printer"
   s.homepage         = "https://github.com/xslim/ReceiptPrinter"
   s.license          = 'MIT'
   s.author           = { "Taras Kalapun" => "t.kalapun@gmail.com" }
