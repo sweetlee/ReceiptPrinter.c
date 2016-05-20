@@ -23,11 +23,11 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'bytebuf', 'printer'
 
   s.subspec "printer" do |sp|
-     sp.source_files = 'printer/*.{h,c}'
+     sp.source_files = '/*.{h,c}'
   end
   
   s.subspec "bytebuf" do |sp|
-     sp.source_files = 'bytebuf/*.{h,c}'
+     sp.source_files = '/*.{h,c}'
   end
 
 end
