@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'ReceiptPrinter/*.{h,m}', 'printer/*.{h,c}', 'bytebuf/*.{h,c}'
-  s.header_mappings_dir = '*'
+  s.header_mappings_dir = '/*'
 
   s.public_header_files = 'ReceiptPrinter/*.h'
   s.frameworks = 'ExternalAccessory'
